@@ -37,3 +37,65 @@
 
 
 ```
+
+
+8. Lets test some performance of the function
+
+```code
+// lets test the performance
+	// here performance means that the particular function should finish in some
+	// particular time ,we will use the **timeout** parameter in test 
+
+	@Test(timeout = 1)
+	public void testPerformance() {
+		int array[] = { 3, 2, 1 ,4,3,3,43,34343,234322434,23423423,423,423423,423,423,423,4,2345,645,6456,45,645,645645645,645,6,456,45,64546,45 };
+		for (int i = 0; i < 1000000; i++) {
+			Arrays.sort(array);
+		}
+
+	}
+
+```
+
+9. Running Parameterixed Test
+
+1. For this we just needs to create a class basically test call with tag @RunWith(Parameterized.class)
+2. Now we have to create one function which will store all the input and expected output
+3. Than we need to call the instance variables in our class and hence the test is parameterixed now.
+
+```code
+
+
+@RunWith(Parameterized.class)
+public class StringHelperParameterizedTest {
+
+	StringHelper helper=new StringHelper();
+	
+	private String input;
+	private String expectedOutput;
+	
+	
+	
+	public StringHelperParameterizedTest(String input, String expectedOutput) {
+		this.input = input;
+		this.expectedOutput = expectedOutput;
+	}
+
+	
+	@Parameters
+	public static Collection<String []> testConditions() {
+		
+		//this array is for the input and the output for the test cases
+		String array[][]= {{"AABCD","BCD"},{"BCDE","BCDE"}};
+		
+		return Arrays.asList(array);
+	}
+
+
+	@Test
+	public void testtruncateAInFirst2Positions() {
+		assertEquals(expectedOutput, helper.truncateAInFirst2Positions(input));
+	}
+
+
+```
