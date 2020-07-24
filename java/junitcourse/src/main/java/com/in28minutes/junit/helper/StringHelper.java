@@ -15,6 +15,16 @@ public class StringHelper {
 
 	public boolean areFirstAndLastTwoCharactersTheSame(String str) {
 
+		//since here we are not having any null check it is thwoing the error in the test case where we are doing a null check
+		
+		if(str==null) {
+			return false;
+		}
+		
+		if(str.length()==0) {
+			return false;
+		}
+		
 		if (str.length() <= 1)
 			return false;
 		if (str.length() == 2)
