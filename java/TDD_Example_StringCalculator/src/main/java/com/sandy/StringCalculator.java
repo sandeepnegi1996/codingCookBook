@@ -4,22 +4,26 @@ public class StringCalculator {
 
 	public int Add(String str) {
 
-		int result=0;
+		int result = 0;
 		if (str.isEmpty()) {
 			return 0;
 		}
 
-		String arr[] = str.split(",");
-		if (arr.length > 2) {
-			throw new RuntimeException("more than two numbers are passed");
-		}
+		String arr[] = str.split(",|\n");
 
 		// integer.parseint will check whther or not it is number if it is not number
 		// than throw exception
 
 		for (String number : arr) {
-			Integer.parseInt(number);
-			result+= Integer.parseInt(number);
+			int current = Integer.parseInt(number);
+
+			if (current < 0) {
+				throw new RuntimeException("negative numbers are not allowed");
+			}
+
+			if (current <= 1000)
+				result += current;
+
 		}
 
 		return result;

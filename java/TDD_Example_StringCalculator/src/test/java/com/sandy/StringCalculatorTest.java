@@ -2,7 +2,7 @@ package com.sandy;
 
 import static org.junit.Assert.*;
 
-import org.junit.Assert;
+import  org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -27,11 +27,7 @@ public class StringCalculatorTest {
 		Assert.assertEquals(0, calc.Add(""));
 	}
 
-	@Test(expected = RuntimeException.class)
-	public void test_StringCalculator_WhenMoreThanTwoNumbersAreAdded_ThrowException() {
-		calc.Add("1,2,3");
-
-	}
+	
 
 	@Test
 	public void test_StringCalculator_add_whenTwoNumbersAreUsed_ThrowNoException() {
@@ -59,24 +55,59 @@ public class StringCalculatorTest {
 		Assert.assertEquals(3,calc.Add("1,2"));
 	}
 	
-	@Test
-	public void test_StringCalculator_WhenOneNumberIsGivenPositiveOtherAsNegative_Then_ReturnSumWillHaveTheGreaterNumberSign() {
-		Assert.assertEquals(-4, calc.Add("2,-6"));
+	
+	
+	//negative not allowed if any of the input is negative than throw Exception
+	
+	@Test(expected=RuntimeException.class)
+	public void test_SpringCalculator_whenAnyNegativeIsGiven_Then_ReturnThrowException() {
+		calc.Add("-1,-2");
 	}
 	
-	
-	//if both negative then answer should be negative
-	
-	@Test
-	public void test_StringCalculator_WhenBothInputNegative_Then_ReturnValueNegative() {
-		Assert.assertEquals(-4, calc.Add("-1,-3"));
-	}
+
 	
 	//Test two digit number sums
 	
 	@Test
 	public void test_StringCalculator_WhenTwoDigitsNumbersUsed_Then_ReturnValidSum() {
 		Assert.assertEquals(24,calc.Add("12,12"));
+	}
+	
+	
+	
+	//allow the method to add unknown amount of numbers
+	
+	@Test
+	public void test_StringCalculator_WhenMultipleDigitsUsed_ThenReturmSum() {
+		Assert.assertEquals(10, calc.Add("1,2,3,2,2"));
+	}
+	
+
+	
+	//Numbers bigger than thousand should be ignored
+	// 10001 +2 = 2
+	
+	@Test
+	public void test_StringCalculator_WhenNumberMoreThanThousantUsed_Then_ReturnTheOtherNumber() {
+		Assert.assertEquals(2 ,calc.Add("1002,2"));
+	}
+	
+	
+	//The following input is ok: "1\n2,3" (will equal 6)
+	//allow to have a \n between the numbers
+	
+
+	@Test
+	public void test_StringCalculator_WhenNewlineBetweenNumbers_Then_ReturnTheValidSum() {
+		Assert.assertEquals(6,calc.Add("1\n2,3"));
+	}
+	
+	
+	//test with multiple number where the delimiter is \n 
+	
+	@Test
+	public void test_StringCalculator_WhenNewLineIsOnlyDelimiter_then_return_validSum() {
+		Assert.assertEquals(8, calc.Add("1\n2\n1\n2\n2"));
 	}
 	
 	
