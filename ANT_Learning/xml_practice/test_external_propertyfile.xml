@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<project name="testing_external_properties_file" default="first">
+
+    <property file="build.properties"/>
+    <target name="first">
+        <echo>Calling the properties :   ${webdrivermanager}</echo>
+    </target>
+
+</project>

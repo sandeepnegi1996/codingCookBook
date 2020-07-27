@@ -91,6 +91,19 @@ https://www.javaguides.net/2019/12/how-to-install-apache-ant-on-windows-10.html
 
 
 
+# We can use the properties from the some file and using that file in our xml files
+
+
+1. We will create one file build.properties this will have some key and values pairs then we will 
+2. use the same file in out xml and call the properties file
+3. <property file="build.properties/>
+4. now we can use the properties mentioned in the build.properties in our xml file 
+
+
+
+# we can also create logs using the javadoc tag inside our xml files.llll
+
+
 
 
 
