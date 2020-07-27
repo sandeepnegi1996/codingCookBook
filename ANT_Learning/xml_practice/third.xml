@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<project name="second_file" default="second" >
+	
+
+	<target name="first">
+		<echo>This is first </echo>
+
+	</target>
+	
+	<target name="second" depends="first">
+		<echo>Testing</echo>
+	</target>
+
+	
+</project>
