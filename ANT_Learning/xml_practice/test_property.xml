@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<project name="testing_properties" default="first">
+
+    <property name="url" value="www.hashcodehub.com" />
+    <target name="first">
+        <echo>Testing the url :  ${url}</echo>
+    </target>
+
+
+</project>
