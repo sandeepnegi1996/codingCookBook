@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<project name="hello_world" default="first">
+
+	<target name="first">
+		<echo> Hello - world </echo>
+	</target>
+
+</project>
