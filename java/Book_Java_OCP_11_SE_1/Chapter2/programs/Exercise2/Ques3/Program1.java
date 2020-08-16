@@ -1,8 +1,11 @@
 package foo;
-class Program1 {
+import static foo.bar.Program2.displayProgram2;
+public class Program1 {
 	
-	public static void displayProgram1() {
-		System.out.println("Foo from the Program1");
+	public static void main(String args[]) {
+
+		displayProgram2();
+		System.out.println("hello world");
 	}
 
 }
