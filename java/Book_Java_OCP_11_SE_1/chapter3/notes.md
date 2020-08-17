@@ -50,3 +50,38 @@ void test() {
 
 	System.out.println(x);
 }
+
+```
+10. we can have underscores in an int value like :- 1_000_0000
+11. we can have undetscores multiple underscores together --> 1___000____;
+```java
+
+// these all mentioned are the valid syntax
+	long x=1000l;
+	long y=1000L;
+
+
+	float q=1.324f;
+	float w=666.4444F;
+
+
+            
+
+```
+12. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
