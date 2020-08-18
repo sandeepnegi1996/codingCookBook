@@ -68,7 +68,10 @@ void test() {
             
 
 ```
-12. 
+12. We cannot reasign any values assign to final variable.
+13. in case of reference variable made final we cannot defreced or reference to some other object but still we can chnage the object data members values.
+14. Integer i1=100;  and Integer i2=100; will refer to the same object here the autoboxing is taking place so thats why we don't need to create a object of wrapper class using new and value of.
+15.  
 
 
 
