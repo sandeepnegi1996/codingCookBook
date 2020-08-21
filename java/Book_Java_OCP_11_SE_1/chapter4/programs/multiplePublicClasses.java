@@ -1,0 +1,8 @@
+public Student {
+
+}
+
+public Professor {
+
+
+}
