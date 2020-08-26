@@ -63,3 +63,30 @@ method and the block.
 6. Cannot assign null to var --> var x=null  --> This will Give CTE
 7. var[] a=new int []{1,2};   --> left side will give error can't use [] with var right side is OK.
 8.
+
+
+
+##### Conversion
+1. Explicity float can be converted to int.
+``` java
+public int display(float x) {
+
+	return (int)x;
+}
+	
+
+```
+2. above function will work for int,float,
+3. If we try to pass double it will not compile since implicitly we cannot convert doublt to float so 
+if we want to pass the double we need to explicity convert it to the float type then it will work
+4. String will not work in case as the imput.
+``` java
+
+  String x=23;
+  System.out.println(x);
+
+//above mentioned code will fail since int cannot be converted to string
+
+String x="hello"+23;
+System.out.println(x);
+```
