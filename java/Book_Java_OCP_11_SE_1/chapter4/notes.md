@@ -1,5 +1,16 @@
 
-# Use of the This keyword
+
+#### StringBuilder 
+1. if we are appending again and again then StringBuilder is much more efficient then the String object since it will not create new 
+	string on each append.
+2. StringBuffer and StringBuilder is having the same API but the StringBuffer is thread safe so you can use StringBuffer whenever you want 
+   you want multiple threads to change the data.
+  
+
+
+
+
+#### Use of the This keyword
 
 1. 
 ```java
